@@ -81,7 +81,3 @@ ebook-system/
 | DELETE | `/api/books/:id` | 删除书籍 |
 | GET | `/api/search-book?q=关键词` | 搜索书籍信息 |
 | GET | `/api/proxy-image?url=图片地址` | 封面图片代理 |
-
-## 许可证
-
-MIT License
