@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>上传电子书 - 电子书管理系统</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236c5ce7'><path d='M4 19.5A2.5 2.5 0 0 1 6.5 17H20v2H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z'/></svg>">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/" class="logo">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+      </svg>
+      电子书管理
+    </a>
+    <div class="nav-links">
+      <a href="/">书架</a>
+      <a href="/upload" class="active">上传</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="page-header">
+      <h1>上传电子书</h1>
+      <p>上传 PDF 格式的电子书到你的书架</p>
+    </div>
+
+    <form id="uploadForm" class="upload-form">
+      <div class="form-group">
+        <label>PDF 文件</label>
+        <div id="dropZone" class="file-drop">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+          <p>点击或拖拽 PDF 文件到此处</p>
+          <div id="fileName" class="file-name"></div>
+        </div>
+        <input type="file" id="pdfFile" name="pdf" accept=".pdf" required style="display:none;">
+      </div>
+
+      <div id="searchSection" class="search-section" style="display:none;">
+        <div class="search-bar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="searchInput" placeholder="正在根据文件名搜索书籍信息...">
+          <button type="button" id="searchBtn" class="btn btn-primary btn-sm">搜索</button>
+        </div>
+        <div id="searchResults" class="search-results"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="title">书名</label>
+        <input type="text" id="title" name="title" placeholder="留空则使用文件名">
+      </div>
+
+      <div class="form-group">
+        <label for="author">作者</label>
+        <input type="text" id="author" name="author" placeholder="未知作者">
+      </div>
+
+      <div class="form-group">
+        <label for="description">简介</label>
+        <textarea id="description" name="description" placeholder="可选，添加书籍简介..."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        上传
+      </button>
+    </form>
+  </main>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
